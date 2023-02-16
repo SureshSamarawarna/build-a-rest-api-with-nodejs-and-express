@@ -18,12 +18,13 @@ app.get('/api/courses/:id',(req,res)=>{
     if(!course) res.status(404).send('The course with the given id was not found.')
     res.send(course);
 })
-app.post('/api/courses',(req,res)={
+app.post('/api/courses',(req,res)=>{
     const courseNew  = {
         id: courses.length+1,
-        name: req.bdy.name
-    }
+        name: req.body.name
+    };
     courses.push(course);
+    res.send(course);
 });
 
 const port = process.env.PORT || 3000 ;
